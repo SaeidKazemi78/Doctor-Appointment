@@ -1,0 +1,337 @@
+{
+	"info": {
+		"_postman_id": "07c874d7-7262-4b48-8dc7-c44d5ba2e288",
+		"name": "Test Appointment APP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12392237",
+		"_collection_link": "https://winter-robot-949243.postman.co/workspace/Tosan-Techno~b442dfe9-51c3-490c-868d-e9e3c288000c/collection/12392237-07c874d7-7262-4b48-8dc7-c44d5ba2e288?action=share&source=collection_link&creator=12392237"
+	},
+	"item": [
+		{
+			"name": "Add Open Times",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"startTime\":\"2024-05-10T21:00:00.171343844\",\n    \"endTime\":\"2024-05-10T23:00:00.171343844\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4048/api/appointment/add-open-times",
+					"host": [
+						"localhost"
+					],
+					"port": "4048",
+					"path": [
+						"api",
+						"appointment",
+						"add-open-times"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read Not Taken Appointments",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"endTime\":\"2024-05-10T20:57:15.171343844\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4048/api/appointment/read-not-taken-appointments",
+					"host": [
+						"localhost"
+					],
+					"port": "4048",
+					"path": [
+						"api",
+						"appointment",
+						"read-not-taken-appointments"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Read Not Taken Appointments",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4048/api/appointment/read-not-taken-appointments",
+							"host": [
+								"localhost"
+							],
+							"port": "4048",
+							"path": [
+								"api",
+								"appointment",
+								"read-not-taken-appointments"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 10 May 2024 18:54:15 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"startTime\": \"2024-05-10T21:00:00.171344\",\n        \"endTime\": \"2024-05-10T21:30:00.171344\",\n        \"isTakenByPatient\": true,\n        \"createdDate\": \"2024-05-10\",\n        \"patientDTO\": {\n            \"id\": 1,\n            \"fullName\": \"Jon\",\n            \"phoneNumber\": \"09914294130\"\n        }\n    },\n    {\n        \"id\": 2,\n        \"startTime\": \"2024-05-10T21:30:00.171344\",\n        \"endTime\": \"2024-05-10T22:00:00.171344\",\n        \"isTakenByPatient\": false,\n        \"createdDate\": \"2024-05-10\",\n        \"patientDTO\": null\n    },\n    {\n        \"id\": 3,\n        \"startTime\": \"2024-05-10T22:00:00.171344\",\n        \"endTime\": \"2024-05-10T22:30:00.171344\",\n        \"isTakenByPatient\": false,\n        \"createdDate\": \"2024-05-10\",\n        \"patientDTO\": null\n    },\n    {\n        \"id\": 4,\n        \"startTime\": \"2024-05-10T22:30:00.171344\",\n        \"endTime\": \"2024-05-10T23:00:00.171344\",\n        \"isTakenByPatient\": false,\n        \"createdDate\": \"2024-05-10\",\n        \"patientDTO\": null\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Delete Appointment",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"endTime\":\"2024-05-10T20:57:15.171343844\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4048/api/appointment/delete-appointments/1",
+					"host": [
+						"localhost"
+					],
+					"port": "4048",
+					"path": [
+						"api",
+						"appointment",
+						"delete-appointments",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read All Open Appointment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:4048/api/appointment/read-all-open-appointments/2024-05-10",
+					"host": [
+						"localhost"
+					],
+					"port": "4048",
+					"path": [
+						"api",
+						"appointment",
+						"read-all-open-appointments",
+						"2024-05-10"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Read All Open Appointment",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:4048/api/appointment/read-all-open-appointments/2024-05-10",
+							"host": [
+								"localhost"
+							],
+							"port": "4048",
+							"path": [
+								"api",
+								"appointment",
+								"read-all-open-appointments",
+								"2024-05-10"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 10 May 2024 18:50:06 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 2,\n        \"startTime\": \"2024-05-10T21:30:00.171344\",\n        \"endTime\": \"2024-05-10T22:00:00.171344\",\n        \"isTakenByPatient\": false,\n        \"createdDate\": \"2024-05-10\",\n        \"patientDTO\": null\n    },\n    {\n        \"id\": 3,\n        \"startTime\": \"2024-05-10T22:00:00.171344\",\n        \"endTime\": \"2024-05-10T22:30:00.171344\",\n        \"isTakenByPatient\": false,\n        \"createdDate\": \"2024-05-10\",\n        \"patientDTO\": null\n    },\n    {\n        \"id\": 4,\n        \"startTime\": \"2024-05-10T22:30:00.171344\",\n        \"endTime\": \"2024-05-10T23:00:00.171344\",\n        \"isTakenByPatient\": false,\n        \"createdDate\": \"2024-05-10\",\n        \"patientDTO\": null\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Take Appointment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"appointmentId\":\"sad\",\n    \"fullName\":\"\",\n    \"phoneNumber\":\"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4048/api/appointment/take-appointment",
+					"host": [
+						"localhost"
+					],
+					"port": "4048",
+					"path": [
+						"api",
+						"appointment",
+						"take-appointment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read Patient Specific Appointment",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"appointmentId\":\"sad\",\n    \"fullName\":\"\",\n    \"phoneNumber\":\"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:4048/api/appointment/read-own-appointments/09914294130",
+					"host": [
+						"localhost"
+					],
+					"port": "4048",
+					"path": [
+						"api",
+						"appointment",
+						"read-own-appointments",
+						"09914294130"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Read Patient Specific Appointment",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"appointmentId\":\"sad\",\n    \"fullName\":\"\",\n    \"phoneNumber\":\"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4048/api/appointment/read-own-appointments/09914294130",
+							"host": [
+								"localhost"
+							],
+							"port": "4048",
+							"path": [
+								"api",
+								"appointment",
+								"read-own-appointments",
+								"09914294130"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 10 May 2024 18:54:27 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"startTime\": \"2024-05-10T21:00:00.171344\",\n        \"endTime\": \"2024-05-10T21:30:00.171344\",\n        \"isTakenByPatient\": true,\n        \"createdDate\": \"2024-05-10\",\n        \"patientDTO\": {\n            \"id\": 1,\n            \"fullName\": \"Jon\",\n            \"phoneNumber\": \"09914294130\"\n        }\n    }\n]"
+				}
+			]
+		}
+	]
+}
